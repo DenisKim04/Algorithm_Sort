@@ -26,7 +26,7 @@ public class Main {
         //____________________________________________________________________________________
         int[] array = new int[]{10, 299, 53, 129, 489, -122, 0, -1, -328, 999, 666, 65, 11, 11, 1, 10};
         System.out.println("Array length "+ array.length);
-        InsertsSort insertsSort = new InsertsSort(array);
+        InsertSort insertsSort = new InsertSort(array);
         System.out.println("Insert sort");
         System.out.println("_______________________________________________________________________");
         printArray(insertsSort.getArray());

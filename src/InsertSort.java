@@ -1,4 +1,4 @@
-class InsertsSort {
+class InsertSort {
     private int[] array;
 
     public void sort() {
@@ -18,10 +18,10 @@ class InsertsSort {
         }
     }
 
-    public InsertsSort() {
+    public InsertSort() {
     }
 
-    public InsertsSort(int[] array) {
+    public InsertSort(int[] array) {
         this.array = array;
     }
 
