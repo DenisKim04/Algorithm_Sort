@@ -1,11 +1,18 @@
-class InsertSort {
-    private int[] array;
+package sort;
 
+import createSrot.CreateSort;
+
+public class InsertSort extends Sort implements CreateSort {
+
+    @Override
     public void sort() {
+    insertSort();
 
+    }
+    public void insertSort(){
+        int[] array = getArray();
         for (int left = 0; left < array.length; left++) {
             int valueFromArray = array[left];
-
             int right = left - 1;
             for (; right >= 0; right--) {
                 if (valueFromArray < array[right]) {
@@ -16,20 +23,18 @@ class InsertSort {
             }
             array[right + 1] = valueFromArray;
         }
+        setArray(array);
     }
+
 
     public InsertSort() {
     }
 
     public InsertSort(int[] array) {
-        this.array = array;
+        super(array);
     }
 
-    public int[] getArray() {
-        return array;
-    }
-
-    public void setArray(int[] array) {
-        this.array = array;
+    public InsertSort(String typeSort) {
+        super("Inner");
     }
 }
