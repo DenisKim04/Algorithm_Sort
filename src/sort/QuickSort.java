@@ -4,7 +4,6 @@ import createSrot.CreateSort;
 
 public class QuickSort extends Sort implements CreateSort {
 
-
     public QuickSort() {
     }
 
@@ -36,7 +35,7 @@ public class QuickSort extends Sort implements CreateSort {
                 j--;
             }
             if (i <= j) {
-               swap(array,i,j);
+                swap(array, i, j);
                 i++;
                 j--;
             }
@@ -60,7 +59,7 @@ public class QuickSort extends Sort implements CreateSort {
         int[] array = getArray();
         int low = 0;
         int high = getArray().length - 1;
-        quickSort(array,low,high);
+        quickSort(array, low, high);
         setArray(array);
     }
 }

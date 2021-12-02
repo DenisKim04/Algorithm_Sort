@@ -2,7 +2,7 @@ package sort;
 
 import createSrot.CreateSort;
 
-public class BubbleSort extends Sort  implements CreateSort {
+public class BubbleSort extends Sort implements CreateSort {
 
 
     public BubbleSort() {
@@ -17,13 +17,13 @@ public class BubbleSort extends Sort  implements CreateSort {
     }
 
 
-
     @Override
     public void sort() {
-       bubbleSort();
+        bubbleSort();
 
     }
-    private void bubbleSort(){
+
+    private void bubbleSort() {
         int[] array = getArray();
         for (int i = array.length - 1; i >= 1; i--) {
             for (int in = 0; in < i; in++) {
@@ -34,6 +34,7 @@ public class BubbleSort extends Sort  implements CreateSort {
         }
         setArray(array);
     }
+
     private void swap(int[] array, int firstIndex, int secondIndex) {
         int box = array[firstIndex];
         array[firstIndex] = array[secondIndex];

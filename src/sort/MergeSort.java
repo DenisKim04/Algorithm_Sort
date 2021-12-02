@@ -4,8 +4,8 @@ import createSrot.CreateSort;
 
 public class MergeSort extends Sort implements CreateSort {
     @Override
-    public void sort(){
-       int[] array = getArray();
+    public void sort() {
+        int[] array = getArray();
         mergeSort(array, array.length);
         setArray(array);
     }

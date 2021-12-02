@@ -30,6 +30,7 @@ public abstract class Sort {
     public void setTypeSort(String typeSort) {
         this.typeSort = typeSort;
     }
+
     public void printArray(int[] array) {
         for (int i = 0; i < array.length; i++) {
             System.out.print("[" + array[i] + "] ");

@@ -3,9 +3,10 @@ package factory;
 import createSrot.CreateSort;
 import sort.QuickSort;
 
-public class QuickSortFactory implements SortFactory{
+public class QuickSortFactory implements SortFactory {
+
     @Override
-    public CreateSort createSort(int[] array) {
-        return new QuickSort(array);
+    public CreateSort createSort() {
+        return new QuickSort();
     }
 }

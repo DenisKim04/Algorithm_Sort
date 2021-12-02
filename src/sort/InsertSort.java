@@ -6,10 +6,11 @@ public class InsertSort extends Sort implements CreateSort {
 
     @Override
     public void sort() {
-    insertSort();
+        insertSort();
 
     }
-    public void insertSort(){
+
+    public void insertSort() {
         int[] array = getArray();
         for (int left = 0; left < array.length; left++) {
             int valueFromArray = array[left];
