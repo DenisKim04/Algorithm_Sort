@@ -6,7 +6,7 @@ import sort.BubbleSort;
 public class BubbleSortFactory implements SortFactory{
 
     @Override
-    public CreateSort createSort() {
-        return new BubbleSort();
+    public CreateSort createSort(int[] array) {
+        return new BubbleSort(array);
     }
 }

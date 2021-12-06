@@ -2,12 +2,12 @@ package sort;
 
 import createSrot.CreateSort;
 
-public class MergeSort extends Sort implements CreateSort {
+public class MergeSort implements CreateSort {
+    private int[] array;
     @Override
     public void sort() {
-        int[] array = getArray();
         mergeSort(array, array.length);
-        setArray(array);
+
     }
 
     public void mergeSort(int[] array, int length) {
@@ -53,14 +53,15 @@ public class MergeSort extends Sort implements CreateSort {
 
     }
 
-    public MergeSort() {
-    }
-
     public MergeSort(int[] array) {
-        super(array);
+        this.array = array;
     }
 
-    public MergeSort(String typeSort) {
-        super("merge");
+    public int[] getArray() {
+        return array;
+    }
+
+    public void setArray(int[] array) {
+        this.array = array;
     }
 }

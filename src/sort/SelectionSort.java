@@ -2,7 +2,9 @@ package sort;
 
 import createSrot.CreateSort;
 
-public class SelectionSort extends Sort implements CreateSort {
+public class SelectionSort implements CreateSort , SwapElement {
+private int[] array;
+
 
     @Override
     public void sort() {
@@ -10,7 +12,7 @@ public class SelectionSort extends Sort implements CreateSort {
     }
 
     private void selectionSort() {
-        int[] array = getArray();
+
         for (int i = 0; i < array.length; i++) {
             int minValue = i;
             for (int in = 0; in < array.length; in++) {
@@ -21,10 +23,22 @@ public class SelectionSort extends Sort implements CreateSort {
             swap(array,i,minValue);
         }
     }
-
+    @Override
     public void swap(int[] array, int lowIndex, int highIndex) {
     int outValue = array[lowIndex];
     array[lowIndex] = array[highIndex];
     array[highIndex] = outValue;
+    }
+
+    public SelectionSort(int[] array) {
+        this.array = array;
+    }
+
+    public int[] getArray() {
+        return array;
+    }
+
+    public void setArray(int[] array) {
+        this.array = array;
     }
 }

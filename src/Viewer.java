@@ -12,6 +12,7 @@ public class Viewer {
         System.out.print("Enter type Algorithm sort: ");
         Scanner scanner = new Scanner(System.in);
         String type = scanner.next().toLowerCase(Locale.ROOT);
+        System.out.println("Type Create: Default, random, self");
         System.out.print("Select type Crete array: ");
         String choice = scanner.next().toLowerCase(Locale.ROOT);
         printSort(type, choice);
@@ -21,6 +22,7 @@ public class Viewer {
             console();
         } else {
             System.out.println("Exit the program");
+            System.gc();
             System.exit(0);
         }
     }
@@ -39,28 +41,29 @@ public class Viewer {
         System.out.println("Array length " + items.length);
         printArray(items);
         SortFactory sortFactory = creteSortByType(typeSort);
-        CreateSort createSort = sortFactory.createSort();
+        CreateSort createSort = sortFactory.createSort(items);
         createSort.sort();
         printArray(items);
     }
 
     private int[] selectionCreateArray(String choice) {
         Scanner scanner = new Scanner(System.in);
+        int lengthArray;
         if (choice.equalsIgnoreCase("Default")) {
             int[] array = new int[]{10, 299, 53, 129, 489, -122, 0, -1, -328, 999, 666, 65, 11, 11, 1, 10};
             return array;
         } else if (choice.equalsIgnoreCase("Random")) {
             System.out.print("Enter length array : ");
-            int lengthArray = scanner.nextInt();
-            if (lengthArray <= 2){
+            lengthArray = scanner.nextInt();
+            if (lengthArray <= 2) {
                 System.out.println("You entered the array length too small, please try again");
                 selectionCreateArray(choice);
             }
             return createRandomArray(lengthArray);
         } else if (choice.equalsIgnoreCase("Self")) {
             System.out.println("Enter length array");
-            int lengthArray = scanner.nextInt();
-            if (lengthArray <= 2){
+            lengthArray = scanner.nextInt();
+            if (lengthArray <= 2) {
                 System.out.println("You entered the array length too small, please try again");
                 selectionCreateArray(choice);
             }
@@ -83,7 +86,7 @@ public class Viewer {
         int[] array = new int[lengthArray];
         for (int i : array) {
             Scanner scanner = new Scanner(System.in);
-            System.out.println("add element by index \\i");
+            System.out.println("add element by index " + i);
             array[i] = scanner.nextInt();
         }
         return array;
@@ -104,6 +107,7 @@ public class Viewer {
             case ("merge sort"):
                 return new MergeSortFactory();
             case ("selection"):
+            case ("selection sort"):
                 return new SelectionSortFactory();
             default:
                 throw new RuntimeException(type + " it's sort to been");

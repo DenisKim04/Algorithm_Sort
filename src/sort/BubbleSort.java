@@ -2,20 +2,8 @@ package sort;
 
 import createSrot.CreateSort;
 
-public class BubbleSort extends Sort implements CreateSort {
-
-
-    public BubbleSort() {
-    }
-
-    public BubbleSort(int[] array) {
-        super(array);
-    }
-
-    public BubbleSort(String typeSort) {
-        super("bubble");
-    }
-
+public class BubbleSort implements CreateSort, SwapElement {
+    private int[] array;
 
     @Override
     public void sort() {
@@ -24,7 +12,7 @@ public class BubbleSort extends Sort implements CreateSort {
     }
 
     private void bubbleSort() {
-        int[] array = getArray();
+
         for (int i = array.length - 1; i >= 1; i--) {
             for (int in = 0; in < i; in++) {
                 if (array[in] > array[in + 1]) {
@@ -32,13 +20,23 @@ public class BubbleSort extends Sort implements CreateSort {
                 }
             }
         }
-        setArray(array);
+    }
+    @Override
+    public void swap(int[] array, int lowIndex, int highIndex) {
+        int box = array[lowIndex];
+        array[lowIndex] = array[highIndex];
+        array[highIndex] = box;
     }
 
-    private void swap(int[] array, int firstIndex, int secondIndex) {
-        int box = array[firstIndex];
-        array[firstIndex] = array[secondIndex];
-        array[secondIndex] = box;
+    public BubbleSort(int[] array) {
+        this.array = array;
     }
 
+    public int[] getArray() {
+        return array;
+    }
+
+    public void setArray(int[] array) {
+        this.array = array;
+    }
 }

@@ -2,22 +2,12 @@ package sort;
 
 import createSrot.CreateSort;
 
-public class QuickSort extends Sort implements CreateSort {
+public class QuickSort implements CreateSort , SwapElement {
 
-    public QuickSort() {
-    }
-
-    public QuickSort(int[] array) {
-        super(array);
-    }
-
-    public QuickSort(String typeSort) {
-        super("Quick");
-    }
+   private int[] array;
 
 
     private void quickSort(int[] array, int low, int high) {
-
         if (array.length == 0)
             return;
 
@@ -47,19 +37,29 @@ public class QuickSort extends Sort implements CreateSort {
             quickSort(array, i, high);
         return;
     }
-
-    private void swap(int[] array, int i, int j) {
-        int outElement = array[i];
-        array[i] = array[j];
-        array[j] = outElement;
+    @Override
+    public void swap(int[] array, int lowIndex, int highInndex) {
+        int outElement = array[lowIndex];
+        array[lowIndex] = array[highInndex];
+        array[highInndex] = outElement;
     }
 
     @Override
     public void sort() {
-        int[] array = getArray();
         int low = 0;
-        int high = getArray().length - 1;
+        int high = array.length - 1;
         quickSort(array, low, high);
-        setArray(array);
+    }
+
+    public QuickSort(int[] array) {
+        this.array = array;
+    }
+
+    public int[] getArray() {
+        return array;
+    }
+
+    public void setArray(int[] array) {
+        this.array = array;
     }
 }

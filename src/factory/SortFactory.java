@@ -4,5 +4,5 @@ import createSrot.CreateSort;
 
 public interface SortFactory {
 
-    CreateSort createSort();
+    CreateSort createSort(int[] array);
 }

@@ -6,7 +6,7 @@ import sort.MergeSort;
 public class MergeSortFactory implements SortFactory {
 
     @Override
-    public CreateSort createSort() {
-        return new MergeSort();
+    public CreateSort createSort(int[] array) {
+        return new MergeSort(array);
     }
 }

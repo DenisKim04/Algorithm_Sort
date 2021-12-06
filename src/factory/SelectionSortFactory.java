@@ -5,7 +5,7 @@ import sort.SelectionSort;
 
 public class SelectionSortFactory implements  SortFactory{
     @Override
-    public CreateSort createSort() {
-        return new SelectionSort();
+    public CreateSort createSort(int[] array) {
+        return new SelectionSort(array);
     }
 }
