@@ -38,10 +38,11 @@ public class QuickSort implements CreateSort , SwapElement {
         return;
     }
     @Override
-    public void swap(int[] array, int lowIndex, int highInndex) {
-        int outElement = array[lowIndex];
-        array[lowIndex] = array[highInndex];
-        array[highInndex] = outElement;
+    public void swap(int[] array, int lowIndex, int highIndex) {
+        array[lowIndex] = array[lowIndex] + array[highIndex] - (array[highIndex] = array[lowIndex]);
+//        int outElement = array[lowIndex];
+//        array[lowIndex] = array[highIndex];
+//        array[highIndex] = outElement;
     }
 
     @Override

@@ -25,9 +25,10 @@ private int[] array;
     }
     @Override
     public void swap(int[] array, int lowIndex, int highIndex) {
-    int outValue = array[lowIndex];
-    array[lowIndex] = array[highIndex];
-    array[highIndex] = outValue;
+        array[lowIndex] = array[lowIndex] + array[highIndex] - (array[highIndex] - array[lowIndex]);
+//    int outValue = array[lowIndex];
+//    array[lowIndex] = array[highIndex];
+//    array[highIndex] = outValue;
     }
 
     public SelectionSort(int[] array) {

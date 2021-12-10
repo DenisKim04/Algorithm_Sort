@@ -11,7 +11,6 @@ public class InsertSort  implements CreateSort {
     }
 
     public void insertSort() {
-
         for (int left = 0; left < array.length; left++) {
             int valueFromArray = array[left];
             int right = left - 1;

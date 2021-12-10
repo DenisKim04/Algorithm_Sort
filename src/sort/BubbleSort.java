@@ -23,10 +23,12 @@ public class BubbleSort implements CreateSort, SwapElement {
     }
     @Override
     public void swap(int[] array, int lowIndex, int highIndex) {
-        int box = array[lowIndex];
-        array[lowIndex] = array[highIndex];
-        array[highIndex] = box;
+        array[lowIndex] = array[lowIndex] + array[highIndex] - (array[highIndex] = array[lowIndex]); // swap variables
+//        int box = array[lowIndex];                                                                //  not use additional variables
+//        array[lowIndex] = array[highIndex];
+//        array[highIndex] = box;
     }
+
 
     public BubbleSort(int[] array) {
         this.array = array;

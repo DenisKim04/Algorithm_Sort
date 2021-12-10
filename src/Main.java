@@ -15,17 +15,15 @@ public class Main {
     }
 
 }
+/*    public static void printArray(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.print("[" + array[i] + "] ");
+        }
+        System.out.println(" ");
 
-
-//    public static void printArray(int[] array) {
-//        for (int i = 0; i < array.length; i++) {
-//            System.out.print("[" + array[i] + "] ");
-//        }
-//        System.out.println(" ");
-//
-//    }
-//}
-
+    }
+}
+*/
 //        // Merge sort
 //        //______________________________________________________________________________________
 //        int[] items = new int[]{10, 299, 53, 129, 489, -122, 0, -1, -328, 999, 666, 65, 11, 11, 1, 10};
